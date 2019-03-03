@@ -160,21 +160,6 @@ local function determine_income(h_income, l_income)
   return income
 end
 
---[[local function get_random_data_pos()
-  local plain_tab = parse_CSV(TRAIN_PATH)
-  local random_tab = {}
-  while (#plain_tab > 0) do
-    local random_idx = math.random(1, #plain_tab)
-    table.insert(random_tab, table.remove(plain_tab, random_idx))
-  end
-  return random_tab
-end
-
-local function get_validation_data()
-  local data_random = get_random_data_pos()
-  print(#data_random, data_random[1].id)
-end]]
-
 -- MAIN PROGRAM
 math.randomseed(os.time())
 local data_train = parse_CSV(TRAIN_PATH)
@@ -184,8 +169,6 @@ print_table(data_train)
 print_table(data_test)
 print("total data_train:", #data_train)
 print("total data_test:", #data_test, "\n")
-
---get_validation_data()
 
 print("---\nWait for processing...")
 
